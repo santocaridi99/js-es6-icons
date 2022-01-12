@@ -112,7 +112,7 @@ const icons = [
 		color: 'blue'
 	}
 ];
-//collego container
+//collego container row
 const iconContainer = document.querySelector('.row');
 //funzione per creare icone
 function iconsGenerator(iconsList,container){
@@ -128,8 +128,8 @@ function iconsGenerator(iconsList,container){
 }
 //richiamo la funzione di generazione icone e genero
 iconsGenerator(icons,iconContainer)
-//assegno a nuovi array oggetti filtrati per tipo
-//filtro tutti
+//assegno a nuovi array ,oggetti filtrati per tipo
+//filtro tutti(all)
 const all = icons.filter(function (newObj) {
 	return newObj.type;
 });

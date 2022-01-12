@@ -16,11 +16,16 @@
 
 .card{
     height: 80px;
-    border: 2px solid lightgrey;
     border-radius: 5px;
 }
 
-.container-fluid{
+.container-card{
     background-color: lightgrey;
     height: 100vh;
+}
+
+/* modificare il form default di bootstrap */
+.mod{
+    width: 100px;
+    display: inline-block;
 }
