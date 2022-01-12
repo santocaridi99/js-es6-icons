@@ -113,17 +113,61 @@ const icons = [
 	}
 ];
 //collego container
-const iconContainer = document.querySelector('.container')
-//for each dell'array icons (item , index) 
-//do all'inner html  di container i dati ricavati da ogni oggetto dell'array
-icons.forEach((obj) => {
-    iconContainer.innerHTML+=`
-        <div class="card">
-            <div class="icon">
-             <i class="${obj.family} ${obj.prefix}${obj.name} ${obj.color}"></i>
-            </div>
-        </div>
-    `
+const iconContainer = document.querySelector('.container');
+//funzione per creare icone
+function iconsGenerator(iconsList,container){
+	//for each dell'array icons (item , index) 
+    //do all'inner html  di container i dati ricavati da ogni oggetto dell'array
+	iconsList.forEach((obj) => {
+		container.innerHTML+=`
+			<div class="card">
+				<div class="icon">
+				<i class="${obj.family} ${obj.prefix}${obj.name} ${obj.color}"></i>
+				</div>
+			</div>
+		`
+	})
+}
+//richiamo la funzione di generazione icone e genero
+iconsGenerator(icons,iconContainer)
+//assegno a nuovi array oggetti filtrati per tipo
+//filtro tutti
+const all = icons.filter(function (newObj) {
+	return newObj.type;
+});
+console.log(all);//debug
+//filtro quando clicco su animali
+const animal = icons.filter(function(newObj){
+	return newObj.type==="animal";
+});
+console.log(animal);//debug
+//filtro quando clicco su vegetali
+const vegetable = icons.filter(function(newObj){
+	return newObj.type==="vegetable";
 })
-
-
+console.log(vegetable);//debug
+//filtro user
+const users = icons.filter(function(newObj){
+	return newObj.type==="user";
+})
+console.log(users);//debug
+const selectInput = document.getElementById('select');
+//addevent all id select
+selectInput.addEventListener("change" , () => {
+	//es se seleziono valore uno
+	//svuoto container
+	//genero schede che hanno all come array
+	if(selectInput.value==="1"){
+		iconContainer.innerHTML = "";//svuoto container sennò li aggiunge
+        iconsGenerator(all,iconContainer)
+	}else if(selectInput.value==="2") {
+		iconContainer.innerHTML = "";//svuoto container
+		iconsGenerator(animal,iconContainer);
+	}else if(selectInput.value==="3") {
+		iconContainer.innerHTML = "";//svuoto container
+		iconsGenerator(vegetable,iconContainer);
+	}else if(selectInput.value==="4") {
+		iconContainer.innerHTML = "";//svuoto container
+		iconsGenerator(users,iconContainer);
+	}
+})
