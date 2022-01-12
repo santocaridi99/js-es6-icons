@@ -114,6 +114,11 @@ const icons = [
 ];
 //collego container row
 const iconContainer = document.querySelector('.row');
+//(bonus)funzione per creare numeri random esadecimali per i colori
+function randomColor (){
+    let newColor = '#'+ Math.floor(Math.random()*16777215).toString(16);
+	return newColor;
+}
 //funzione per creare icone
 function iconsGenerator(iconsList,container){
 	//for each dell'array icons (item , index) 
@@ -121,7 +126,7 @@ function iconsGenerator(iconsList,container){
 	iconsList.forEach((obj) => {
 		container.innerHTML+=`
 			<div class="card d-flex col-2 me-5 mt-5 text-center">
-				<i class="${obj.family} ${obj.prefix}${obj.name} ${obj.color} "></i>
+				<i class="${obj.family} ${obj.prefix}${obj.name} ${obj.color} font-icons "></i>
 				<div><span class="fw-bold">${obj.name}</span></div>
 			</div>
 		`
