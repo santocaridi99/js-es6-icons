@@ -113,17 +113,15 @@ const icons = [
 	}
 ];
 //collego container
-const iconContainer = document.querySelector('.container');
+const iconContainer = document.querySelector('.row');
 //funzione per creare icone
 function iconsGenerator(iconsList,container){
 	//for each dell'array icons (item , index) 
     //do all'inner html  di container i dati ricavati da ogni oggetto dell'array
 	iconsList.forEach((obj) => {
 		container.innerHTML+=`
-			<div class="card">
-				<div class="icon">
-				<i class="${obj.family} ${obj.prefix}${obj.name} ${obj.color}"></i>
-				</div>
+			<div class="card d-flex col-2 me-5 mt-5 text-center">
+				<i class="${obj.family} ${obj.prefix}${obj.name} ${obj.color} "></i>
 			</div>
 		`
 	})
