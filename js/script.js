@@ -116,13 +116,14 @@ const icons = [
 const iconContainer = document.querySelector('.container')
 //for each dell'array icons (item , index) 
 //do all'inner html  di container i dati ricavati da ogni oggetto dell'array
-icons.forEach((obj , i) => {
+icons.forEach((obj) => {
     iconContainer.innerHTML+=`
         <div class="card">
             <div class="icon">
-             <i class="${icons[i].family} ${icons[i].prefix}${icons[i].name} ${icons[i].color}"></i>
+             <i class="${obj.family} ${obj.prefix}${obj.name} ${obj.color}"></i>
             </div>
         </div>
     `
 })
+
 
