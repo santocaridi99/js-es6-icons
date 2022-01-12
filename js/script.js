@@ -122,6 +122,7 @@ function iconsGenerator(iconsList,container){
 		container.innerHTML+=`
 			<div class="card d-flex col-2 me-5 mt-5 text-center">
 				<i class="${obj.family} ${obj.prefix}${obj.name} ${obj.color} "></i>
+				<div><span class="fw-bold">${obj.name}</span></div>
 			</div>
 		`
 	})
