@@ -135,10 +135,13 @@ function iconsGenerator(iconsList,container){
 //richiamo la funzione di generazione icone e genero
 iconsGenerator(icons,iconContainer)
 //bonus1 colori dinamici random
-let font=document.querySelectorAll('.font-icons');
-for(let i=0;i<font.length;i++){
-	font[i].style.color=randomColor();
+function changeColor(){
+	let font=document.querySelectorAll('.font-icons');
+	for(let i=0;i<font.length;i++){
+		font[i].style.color=randomColor();
+	}
 }
+changeColor();
 //assegno a nuovi array ,oggetti filtrati per tipo
 //filtro tutti(all)
 const all = icons.filter(function (newObj) {
@@ -168,15 +171,19 @@ selectInput.addEventListener("change" , () => {
 	//genero schede che hanno all come array
 	if(selectInput.value==="1"){
 		iconContainer.innerHTML = "";//svuoto container sennò li aggiunge
-        iconsGenerator(all,iconContainer)
+        iconsGenerator(all,iconContainer);
+		changeColor();//bonus1
 	}else if(selectInput.value==="2") {
 		iconContainer.innerHTML = "";//svuoto container
 		iconsGenerator(animal,iconContainer);
+		changeColor();//bonus1
 	}else if(selectInput.value==="3") {
 		iconContainer.innerHTML = "";//svuoto container
 		iconsGenerator(vegetable,iconContainer);
+		changeColor();//bonus1
 	}else if(selectInput.value==="4") {
 		iconContainer.innerHTML = "";//svuoto container
 		iconsGenerator(users,iconContainer);
+		changeColor();//bonus1
 	}
 })
