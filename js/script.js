@@ -136,12 +136,12 @@ const all = icons.filter(function (newObj) {
 	return newObj.type;
 });
 console.log(all);//debug
-//filtro quando clicco su animali
+//filtro animali
 const animal = icons.filter(function(newObj){
 	return newObj.type==="animal";
 });
 console.log(animal);//debug
-//filtro quando clicco su vegetali
+//filtro  vegetali
 const vegetable = icons.filter(function(newObj){
 	return newObj.type==="vegetable";
 })
