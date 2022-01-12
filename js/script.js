@@ -114,7 +114,7 @@ const icons = [
 ];
 //collego container row
 const iconContainer = document.querySelector('.row');
-//(bonus)funzione per creare numeri random esadecimali per i colori
+//(bonus 1)funzione per creare numeri random esadecimali per i colori
 function randomColor (){
     let newColor = '#'+ Math.floor(Math.random()*16777215).toString(16);
 	return newColor;
@@ -134,6 +134,11 @@ function iconsGenerator(iconsList,container){
 }
 //richiamo la funzione di generazione icone e genero
 iconsGenerator(icons,iconContainer)
+//bonus1 colori dinamici random
+let font=document.querySelectorAll('.font-icons');
+for(let i=0;i<font.length;i++){
+	font[i].style.color=randomColor();
+}
 //assegno a nuovi array ,oggetti filtrati per tipo
 //filtro tutti(all)
 const all = icons.filter(function (newObj) {
