@@ -112,15 +112,17 @@ const icons = [
 		color: 'blue'
 	}
 ];
-
+//collego container
 const iconContainer = document.querySelector('.container')
-icons.forEach((obj) => {
+//for each dell'array icons (item , index) 
+//do all'inner html  di container i dati ricavati da ogni oggetto dell'array
+icons.forEach((obj , i) => {
     iconContainer.innerHTML+=`
         <div class="card">
             <div class="icon">
-            <i class="${icons[i].family} ${icons[i].prefix}${icons[i].name} ${icons[i].color}"></i>
+             <i class="${icons[i].family} ${icons[i].prefix}${icons[i].name} ${icons[i].color}"></i>
             </div>
         </div>
     `
-    console.log(obj , i)//debug
 })
+
